@@ -57,7 +57,7 @@ Citizen.CreateThread(function()
 					if IsControlJustReleased(0, 0xCEFD9220) then -- [E]
 						SetCurrentPedWeapon(ped, `WEAPON_UNARMED`, true)
 						Citizen.InvokeNative(0x437C08DB4FEBE2BD, ped, "MetalDetectorDetectionValue", 0.0, -1)
-						TriggerEvent('qr-treasure:clent:digging', v.name)
+						TriggerEvent('rsg-treasure:clent:digging', v.name)
 						handleCooldown()
 					end
 				end
