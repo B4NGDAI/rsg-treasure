@@ -1,4 +1,4 @@
-local QRCore = exports['qr-core']:GetCoreObject()
+local RSGCore = exports['rsg-core']:GetCoreObject()
 local initialCooldownSeconds = 3600 -- cooldown time in seconds between treasure
 local cooldownSecondsRemaining = 0 -- done to zero cooldown on restart
 
@@ -95,13 +95,13 @@ end)
 -- dig for treasure
 RegisterNetEvent("rsg-treasure:clent:digging")
 AddEventHandler("rsg-treasure:clent:digging", function(chest)
-	local hasItem = QRCore.Functions.HasItem('shovel', 1)
+	local hasItem = RSGCore.Functions.HasItem('shovel', 1)
 	if hasItem then
 		local randomNumber = math.random(1,100)
 		if randomNumber > 90 then
 			TriggerServerEvent('QBCore:Server:RemoveItem', 'shovel', 1)
 			TriggerEvent('inventory:client:ItemBox', sharedItems['shovel'], 'remove')
-			QRCore.Functions.Notify('your shovel is broken', 'error')
+			RSGCore.Functions.Notify('your shovel is broken', 'error')
 		else
 			StartAnimation('script@mech@treasure_hunting@chest', 0, 'PBL_CHEST_01', 0, 1, true, 10000)
 			Wait(10000)
@@ -109,7 +109,7 @@ AddEventHandler("rsg-treasure:clent:digging", function(chest)
 			active = false
 		end
 	else
-		QRCore.Functions.Notify('you don\'t have a shovel!', 'error')
+		RSGCore.Functions.Notify('you don\'t have a shovel!', 'error')
 	end
 end)
 

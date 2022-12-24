@@ -17,7 +17,7 @@ shared_scripts {
    	'config.lua'
 }
 
-dependency 'qr-core'
+dependency 'rsg-core'
 dependency 'interact-sound'
 
 lua54 'yes'
