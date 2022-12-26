@@ -2,6 +2,20 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 local initialCooldownSeconds = 3600 -- cooldown time in seconds between treasure
 local cooldownSecondsRemaining = 0 -- done to zero cooldown on restart
 
+-----------------------------------------------------------------------------------
+
+-- treasure location set GPS
+RegisterNetEvent('rsg-treasure:client:gototreasure')
+AddEventHandler('rsg-treasure:client:gototreasure', function(treasureCoords, item)
+	StartGpsMultiRoute(GetHashKey("COLOR_RED"), true, true)
+	AddPointToGpsMultiRoute(treasureCoords)
+	SetGpsMultiRouteRender(true)
+	TriggerServerEvent('rsg-treasure:server:removeitem', item, 1)
+	RSGCore.Functions.Notify('treasure location set', 'primary')
+end)
+
+-----------------------------------------------------------------------------------
+
 -- text to screen
 function DrawText3Ds(x, y, z, text)
     local onScreen,_x,_y=GetScreenCoordFromWorldCoord(x, y, z)
