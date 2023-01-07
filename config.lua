@@ -3,15 +3,15 @@ Config = {}
 -- list of common items / add more as required (must be in your shared inventory items)
 Config.CommonItems = {
     "bread", -- example
-	"water", -- example
-	"carrot", -- example
+    "water", -- example
+    "carrot", -- example
 }
 
 -- list of rare items / add more as required (must be in your shared inventory items)
 Config.RareItems = {
     "bread", -- example
-	"water", -- example
-	"carrot", -- example
+    "water", -- example
+    "carrot", -- example
 }
 
 -- vector3 locations for the treasure (add as required) name must be unique

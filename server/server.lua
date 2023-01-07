@@ -2,7 +2,7 @@ local RSGCore = exports['rsg-core']:GetCoreObject()
 
 RSGCore.Functions.CreateUseableItem("treasure1", function(source, item)
     local src = tonumber(source)
-	local coords = vector3(-46.83929, 908.48779, 209.27473)
+    local coords = vector3(-46.83929, 908.48779, 209.27473)
     TriggerClientEvent("rsg-treasure:client:gototreasure", src, coords, item.name)
 end)
 
