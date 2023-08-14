@@ -41,7 +41,7 @@ AddEventHandler('rsg-treasure:client:gototreasure', function()
         pegangmap()
         Wait(10000)
         TriggerServerEvent('rsg-treasure:server:removeitem', 'treasure1', 1)
-        RSGCore.Functions.Notify('Check Your Map For Treasure Location', 'inform', 5000)
+        RSGCore.Functions.Notify('Check Your Map For Treasure Location', 'error', 5000)
         treasurejob = true
         cooldown = true
         treasuretodig = Config.Locations[math.random(#Config.Locations)]
@@ -55,7 +55,7 @@ AddEventHandler('rsg-treasure:client:gototreasure', function()
         TriggerEvent('rsg-treasure:client:MetalDetector')
         TriggerEvent('rsg-treasure:client:MetalDetectorBeep')
     elseif cooldown == true then
-        RSGCore.Functions.Notify('Wait 10 Minute To Start Treasure Map', 'inform', 5000)
+        RSGCore.Functions.Notify('Wait 10 Minute To Start Treasure Map', 'error', 5000)
     end
 end)
 
@@ -108,7 +108,7 @@ AddEventHandler('rsg-treasure:client:MetalDetector', function()
                     end
                     if dist < 1 then
                         Citizen.InvokeNative(0x437C08DB4FEBE2BD, PlayerPedId(), "MetalDetectorDetectionValue", 1.0, -1)
-                        exports['rsg-core']:DrawText('[E] - Start Digging', 'left')
+                        exports['rsg-core']:DrawText('use [E] to Dig', 'left')
                         if IsControlJustReleased(0, 0xCEFD9220) then
                             exports['rsg-core']:HideText()
                             SetCurrentPedWeapon(PlayerPedId(), `WEAPON_UNARMED`, true)
@@ -197,7 +197,7 @@ AddEventHandler("rsg-treasure:clent:digging", function(chest)
         Wait(10000)
         TriggerServerEvent('rsg-treasure:server:givereward', chest)
     else
-        RSGCore.Functions.Notify('You Need A Shovel To Dig Treasure', 'inform', 5000)
+        RSGCore.Functions.Notify('You Need A Shovel To Dig Treasure', 'error', 5000)
     end
 end)
 
