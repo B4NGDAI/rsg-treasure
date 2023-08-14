@@ -168,7 +168,7 @@ function StartAnimation(animDict,flags,playbackListName,p3,p4,groundZ,time)
         Citizen.InvokeNative(0x8B720AD451CA2AB3, animScene, "player", PlayerPedId(), 0)
 
         local modelhash = `p_strongbox_muddy_01x`
-        lib.requestModel(modelhash)
+        RequestModel(modelhash)
         while not HasModelLoaded(modelhash) do
             Wait(10)
         end
