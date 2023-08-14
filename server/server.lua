@@ -1,7 +1,7 @@
 local RSGCore = exports['rsg-core']:GetCoreObject()
 
 RSGCore.Functions.CreateUseableItem("treasure", function(source, item)
-    TriggerClientEvent("ip-treasure:client:gototreasure", source)
+    TriggerClientEvent("rsg-treasure:client:gototreasure", source)
 end)
 
 -----------------------------------------------------------------------------------
