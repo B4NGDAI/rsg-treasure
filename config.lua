@@ -17,7 +17,9 @@ Config.RareItems =
 }
 
 -- vector3 locations for the treasure (add as required) name must be unique
-Config.Locations =
-{
-    {name = 'treasure1', coords = vector3(-46.83929, 908.48779, 209.27473)} -- example
+Config.Locations = {
+	vector3(-4367.24, -2425.7, 19.84),
+	vector3(-1216.18, -1940.31, 42.69),
+	vector3(-5555.31, -2386.91, -8.75),
+	vector3(2798.31, 1353.79, 72.62)
 }
