@@ -41,7 +41,7 @@ AddEventHandler('rsg-treasure:client:gototreasure', function()
         pegangmap()
         Wait(10000)
         TriggerServerEvent('rsg-treasure:server:removeitem', 'treasure1', 1)
-        RSGCore.Functions.Notify('Check Your Map For Treasure Location', 'error', 5000)
+        RSGCore.Functions.Notify('Check Your Map For Treasure Location', 'primary', 5000)
         treasurejob = true
         cooldown = true
         treasuretodig = Config.Locations[math.random(#Config.Locations)]
